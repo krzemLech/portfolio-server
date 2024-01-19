@@ -6,6 +6,7 @@ const TWILIO_NUMBER = process.env.TWILIO_NUMBER;
 const MAIL_KEY = process.env.SENDGRID_API_KEY;
 const ENV = process.env.ENV;
 const PORTFOLIO_ID = process.env.PORTFOLIO_ID;
+const PORT = process.env.PORT || 3000;
 
 module.exports = {
   MAX_COUNT,
@@ -16,4 +17,5 @@ module.exports = {
   TWILIO_NUMBER,
   ENV,
   PORTFOLIO_ID,
+  PORT,
 };

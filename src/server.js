@@ -1,4 +1,5 @@
 const express = require("express");
+const { PORT } = require("./config");
 const { validateMsg } = require("./validation/validation");
 const { connectDB } = require("./db/db");
 const { messageController } = require("./controller/messages");
@@ -15,7 +16,7 @@ app.get("/", (req, res) => {
 
 app.post("/messages", validateMsg, messageController);
 
-app.listen(3000, async () => {
+app.listen(PORT, async () => {
   await connectDB();
   console.log("Server listening on port 3000");
 });
