@@ -1,11 +1,11 @@
 const sgMail = require("@sendgrid/mail");
-const { MAIL_KEY } = require("../config");
+const { EMAIL_KEY, EMAIL_USER } = require("../config");
 
 sendEmail = (name, email, subject, message) => {
-  sgMail.setApiKey(MAIL_KEY);
+  sgMail.setApiKey(EMAIL_KEY);
   const msg = {
-    to: "lech@krzem.dev", // Change to your recipient
-    from: "lech@krzem.dev", // Change to your verified sender
+    to: EMAIL_USER,
+    from: EMAIL_USER,
     subject: subject,
     text: `from: ${name}\nemail: ${email}\nsubject: ${subject}\nmessage: ${message}}`,
     html: `<h1>${subject}</h1><h4>from: ${name}</h4><p>email address: ${email}</p><p>${message}</p>`,

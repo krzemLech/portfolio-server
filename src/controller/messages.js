@@ -1,14 +1,9 @@
-const { MAX_COUNT, PORTFOLIO_ID } = require("../config");
+const { MAX_COUNT } = require("../config");
 const { sendEmail } = require("../messaging/email");
 const { Message } = require("../db/db");
 
 const messageController = async (req, res) => {
   const { name, email, subject, message } = req.body;
-  const portfolioId = req.headers["x-portfolio-id"];
-
-  if (portfolioId !== PORTFOLIO_ID) {
-    return res.status(403).json({ error: "Unathorized app" });
-  }
 
   const count = await Message.countDocuments({
     date: new Date().toISOString().slice(0, 10),
