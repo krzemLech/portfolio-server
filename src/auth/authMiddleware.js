@@ -8,6 +8,7 @@ exports.checkAppId = (req, res, next) => {
   console.log("req headers", req.headers);
   console.log("req query", req.query);
   console.log("req host", req.hostname);
+  console.log("req origin", req.get("origin"));
   if (appId?.trim() !== APP_ID) return next();
   if (host === ALLOWED_HOST) return next();
   return res.status(401).json({ msg: "Unauthorized" });
