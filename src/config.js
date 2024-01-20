@@ -12,6 +12,7 @@ const REDIS_PASS = process.env.REDIS_PASS;
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
 const EMAIL_SERVER = process.env.EMAIL_SERVER;
+const ALLOWED_HOST = process.env.ALLOWED_HOST || "snnmw30krnnf";
 
 module.exports = {
   MAX_COUNT,
@@ -28,4 +29,5 @@ module.exports = {
   EMAIL_PASS,
   EMAIL_USER,
   EMAIL_SERVER,
+  ALLOWED_HOST,
 };
